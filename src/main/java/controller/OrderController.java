@@ -7,6 +7,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 import domain.User;
 
+
 @Controller
 public class OrderController extends ActionSupport implements ModelDriven<User> {
 	

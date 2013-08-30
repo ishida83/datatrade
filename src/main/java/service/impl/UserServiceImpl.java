@@ -1,36 +1,29 @@
 package service.impl;
 
-import javax.annotation.Resource;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import dao.OrderDao;
-import domain.Order;
+import service.UserService;
+import dao.UserDao;
 import domain.User;
 
 @Service
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
 
-	private OrderDao orderDao;
+	@Autowired
+	UserDao userDao;
 
-	public OrderDao getOrderDao() {
-		return orderDao;
+	@Override
+	public User saveUser(User user) {  
+		// TODO Auto-generated method stub
+		userDao.saveUser(user);
+		return userDao.getUser(user.getUsername());
 	}
 
-	@Resource(name = "orderDao")  
-	public void setOrderDao(OrderDao orderDao) {
-		this.orderDao = orderDao;
+	@Override
+	public User getUser(String username) {
+		// TODO Auto-generated method stub
+		return userDao.getUser(username);
 	}
-
-	public User getUser() {
-		User user = new User();
-		user.setPassword("12213");
-		user.setUsername("dfasdfsd");
-		
-		Order order = new Order();
-		order.setAddress("aaaaa");
-		order.setPhonenum("bbbbbb");
-		orderDao.saveOrder(order);
-		return user;
-	}
+	
 }

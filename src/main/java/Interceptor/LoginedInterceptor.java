@@ -23,5 +23,4 @@ public class LoginedInterceptor extends AbstractInterceptor {
 		}
 		return Action.LOGIN;
 	}
-
 }

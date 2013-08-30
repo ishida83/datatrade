@@ -10,8 +10,8 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
 http://cxf.apache.org/jaxws  
 http://cxf.apache.org/schemas/jaxws.xsd">
-	<bean id="hello" class="main.java.controller.HelloWorld" scope="prototype"></bean>
-	<bean id="upload" class="main.java.controller.Upload" scope="prototype"></bean>
+	<bean id="hello" class="controller.HelloWorld" scope="prototype"></bean>
+	<bean id="upload" class="controller.Upload" scope="prototype"></bean>
 	<context:component-scan base-package="main.java.service" />
 	<context:component-scan base-package="main.java.dao" />
 	<bean name="jdbsProperties"
@@ -20,7 +20,7 @@ http://cxf.apache.org/schemas/jaxws.xsd">
 			<list>
 				<value>classpath:jdbc.properties</value>
 			</list>
-		</property>
+		</property>  
 	</bean>
 	<bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
