@@ -30,6 +30,7 @@ public class CommodityDaoImpl implements CommodityDao {
 	@Override
 	public Commodity getCommodity(Long id) {
 		// TODO Auto-generated method stub
+//		hibernateTemplate.findbycfindByCriteria
 		return null;
 	}
 
